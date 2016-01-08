@@ -50,144 +50,110 @@
 
 // Maximum depth of a binary tree
 
-var tree = {
-  value: 8,
-  left: {
-    value: 3,
-    left: {
-      value: 1,
-      left: null,
-      right: {
-        value: 6,
-        left: {
-          value: 4,
-          left: null,
-          right: null
-        },
-        right: {
-          value: 7,
-          left: null,
-          right: null
-        }
-      }
-    }
-  },
-  right: {
-    value: 10,
-    left: null,
-    right: {
-      value: 14,
-      left: {
-        value: 13,
-        left: {
-          value: 13,
-          left: null,
-          right: null
-        }
-      },
-      right: null
-    }
-  }
-};
+// var tree = {
+//   value: 8,
+//   left: {
+//     value: 3,
+//     left: {
+//       value: 1,
+//       left: null,
+//       right: {
+//         value: 6,
+//         left: {
+//           value: 4,
+//           left: null,
+//           right: null
+//         },
+//         right: {
+//           value: 7,
+//           left: null,
+//           right: null
+//         }
+//       }
+//     }
+//   },
+//   right: {
+//     value: 10,
+//     left: null,
+//     right: {
+//       value: 14,
+//       left: {
+//         value: 13,
+//         left: {
+//           value: 13,
+//           left: null,
+//           right: null
+//         }
+//       },
+//       right: null
+//     }
+//   }
+// };
 
-var sample = {
-  value: 100,
-  left: null,
-  right: null
-};
+// var sample = {
+//   value: 100,
+//   left: null,
+//   right: null
+// };
 
-var maxDepth = 0;
+// var maxDepth = 0;
 
-var maximumDepth = function(n) {
+// var maximumDepth = function(n) {
 
-  for (var key in n) {
-    if (key.left) {
+//   for (var key in n) {
+//     if (key.left) {
 
-    }
-  }
+//     }
+//   }
 
-return maxDepth;
-};
+// return maxDepth;
+// };
 
-maximumDepth(sample);
-
-
+// maximumDepth(sample);
 
 
 
 
-/**
-* Write a function that acts like "indexOf", in that it
-* returns the position of a given string within a
-* larger string, and returns -1 if the given string
-* is not found.
-*
-* Two strings are given as arguments. The first
-* argument is the smaller string, and the second argument
-* is the larger string.
-*
-* Do not use either "indexOf" or "search" in this function.
-*
-* Examples:
-*
-*   substrIndex("Francisco", "San Francisco");
-*   => 4
-*   substrIndex("abba", "bbbabbaaa")
-*   => 3
-*   substrIndex("Jose", "San Francisco");
-*   => -1
-*
-* @param {String} needle
-* @param {String} haystack
-* @return integer
-*/
 
 
+// Is one string a substring of another?
+
+var abba = 'abba'; 
+var babba = 'ndndndndnabba';
 
 var substrIndex = function (needle, haystack) {
-  var needleArr = needle.split("");
-  var haystackArr = haystack.split("");
-  var answer = -1;
-
-  for (var i = 0; i < haystackArr.length; ) {
-    if (haystackArr[i] === needleArr[i]) {
-      console.log("Yep");
-      i++;
-    } else {
-      console.log("nope");
-      i++;
-    }
+  var answer = haystack.indexOf(needle);
+  if (answer === -1) {
+    console.log("No, the substring does not exist.");
+    return;
+  } else {
+    console.log("Yes, the substring begins at position " + answer + ".");
+    return;
   }
-
-  return answer;
-
 };
 
-substrIndex("abba", 'bbbabbaaa');
+substrIndex(abba, babba);
 
 
 
 
-
-
-/**
-* Write a function that capitalizes all of the words in
-* a sentence.
-*
-* Examples:
-*
-*   capitalize("Hello world");
-*   => "Hello World"
-*
-*   capitalize("1st thing");
-*   => "1st Thing"
-*
-*   capitalize("javaScript language");
-*   => "JavaScript Language"
-*
-* @param  {String} sentence
-* @return {String}
-*/
+// * Write a function that capitalizes all of the words in
+// * a sentence.
+// *
+// * Examples:
+// *
+// *   capitalize("Hello world");
+// *   => "Hello World"
+// *
+// *   capitalize("1st thing");
+// *   => "1st Thing"
+// *
+// *   capitalize("javaScript language");
+// *   => "JavaScript Language"
+// *
+// * @param  {String} sentence
+// * @return {String}
+// */
 
 // var sample = "javascript language";
 
