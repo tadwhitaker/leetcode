@@ -118,22 +118,21 @@
 
 // Is one string a substring of another?
 
-var abba = 'abba'; 
-var babba = 'ndndndndnabba';
+// var abba = 'abba'; 
+// var babba = 'ndndndndnabba';
 
-var substrIndex = function (needle, haystack) {
-  var answer = haystack.indexOf(needle);
-  if (answer === -1) {
-    console.log("No, the substring does not exist.");
-    return;
-  } else {
-    console.log("Yes, the substring begins at position " + answer + ".");
-    return;
-  }
-};
+// var substrIndex = function (needle, haystack) {
+//   var answer = haystack.indexOf(needle);
+//   if (answer === -1) {
+//     console.log("No, the substring does not exist.");
+//     return;
+//   } else {
+//     console.log("Yes, the substring begins at position " + answer + ".");
+//     return;
+//   }
+// };
 
-substrIndex(abba, babba);
-
+// substrIndex(abba, babba);
 
 
 
@@ -219,7 +218,32 @@ substrIndex(abba, babba);
 // endsWith(test);
 
 
+// Given list of words, find the longest compound word, which is also a concatenation of other subwords that exist in the list
+// Allow users to unput different data
+var list = ["backend", "grandmother", "back", "end", "grand", "mother"];
 
+var compounder = function(arg) {
+  var longest;
+  var sorted = arg.sort(function(a, b) {
+    return b.length - a.length;
+  });
+
+  for (var i = 0; i < sorted.length; i++) {
+    var firstSortedPair = sorted[i].slice(0, 2);
+    for (var x = 0; x < sorted.length; x++) {
+      secondSortedPair = sorted[x].slice(0, 2);
+      if (firstSortedPair === secondSortedPair) {
+        longest = sorted[i];
+        console.log("The answer = ", longest);
+        return longest;
+      }
+    }
+  }
+
+  return longest;
+};
+
+compounder(list);
 
 
 
