@@ -220,35 +220,67 @@
 
 // Given list of words, find the longest compound word, which is also a concatenation of other subwords that exist in the list
 // Allow users to unput different data
-var list = ["backend", "grandmother", "back", "end", "grand", "mother"];
+// var list = ["backend", "grandmother", "back", "end", "grand", "mother"];
 
-var compounder = function(arg) {
-  var longest;
-  var sorted = arg.sort(function(a, b) {
-    return b.length - a.length;
-  });
+// var compounder = function(arg) {
+//   var longest;
+//   // Sort the array so longest word is beginning
+//   var sorted = arg.sort(function(a, b) {
+//     return b.length - a.length;
+//   });
 
-  for (var i = 0; i < sorted.length; i++) {
-    var firstSortedPair = sorted[i].slice(0, 2);
-    for (var x = 0; x < sorted.length; x++) {
-      secondSortedPair = sorted[x].slice(0, 2);
-      if (firstSortedPair === secondSortedPair) {
-        longest = sorted[i];
-        console.log("The answer = ", longest);
-        return longest;
-      }
+//   // Iterate through sorted array, starting with longest word
+//   for (var i = 0; i < sorted.length; i++) {
+//     // Store first two letters of current item
+//     var firstTwoLetters = sorted[i].slice(0, 2);
+//     // Iterate through array looking for matches
+//     for (var x = 0; x < sorted.length; ) {
+//       secondSortedPair = sorted[x].slice(0, 2);
+//       // See if first letters match up
+//       if (firstTwoLetters === secondSortedPair) {
+//         longest = sorted[i];
+//         console.log("The answer = ", longest);
+//         return longest;
+//       } else {
+//         // If letters don't match, increase x and move to next item in array
+//         x++;
+//       }
+//     }
+//   }
+
+//   if (longest === undefined) {
+//     longest = "There are no compound words that satisify the instructions.";
+//     console.log(longest);
+//   }
+
+//   return longest;
+// };
+
+// compounder(list);
+
+
+// Move all 0's to the end while maintaining the relative order of the array.
+
+nums = [0, 1, 0, 3, 12];
+
+var zero = function(arg) {
+  var answer;
+  var notZeros = [];
+  var zeros = [];
+  for (var i = 0; i < arg.length; i++) {
+    if (arg[i] === 0) {
+      zeros.push(arg[i]);
+    } else {
+      notZeros.push(arg[i]);
     }
   }
 
-  return longest;
-};
+  answer = notZeros.concat(zeros);
+  console.log(answer);
+  return answer;
+}
 
-compounder(list);
-
-
-
-
-
+zero(nums);
 
 
 
