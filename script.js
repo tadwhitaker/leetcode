@@ -261,26 +261,71 @@
 
 // Move all 0's to the end while maintaining the relative order of the array.
 
-nums = [0, 1, 0, 3, 12];
+// nums = [0, 1, 0, 3, 12];
 
-var zero = function(arg) {
+// var zero = function(arg) {
+//   var answer;
+//   var notZeros = [];
+//   var zeros = [];
+//   for (var i = 0; i < arg.length; i++) {
+//     if (arg[i] === 0) {
+//       zeros.push(arg[i]);
+//     } else {
+//       notZeros.push(arg[i]);
+//     }
+//   }
+
+//   answer = notZeros.concat(zeros);
+//   console.log(answer);
+//   return answer;
+// }
+
+// zero(nums);
+
+// Check to see if you have valid anagrams.
+
+var one = "cat";
+var two = "tac";
+
+var three = "anagram";
+var four = "agramana";
+
+var anagramer = function(a, b) {
+  var base = a.split("").sort().join("");
+  var test = b.split("").sort().join("");
+  console.log(base);
+  console.log(test);
   var answer;
-  var notZeros = [];
-  var zeros = [];
-  for (var i = 0; i < arg.length; i++) {
-    if (arg[i] === 0) {
-      zeros.push(arg[i]);
-    } else {
-      notZeros.push(arg[i]);
-    }
+
+  if (base === test) {
+    answer = true;
+  } else {
+    answer = false;
   }
 
-  answer = notZeros.concat(zeros);
   console.log(answer);
   return answer;
-}
+};
 
-zero(nums);
+anagramer(one, two);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
