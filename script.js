@@ -284,33 +284,51 @@
 
 // Check to see if you have valid anagrams.
 
-var one = "cat";
-var two = "tac";
+// var one = "cat";
+// var two = "dat";
 
-var three = "anagram";
-var four = "agramana";
+// var three = "anagram";
+// var four = "agramana";
 
-var anagramer = function(a, b) {
-  var base = a.split("").sort().join("");
-  var test = b.split("").sort().join("");
-  console.log(base);
-  console.log(test);
+// var anagramer = function(a, b) {
+//   var base = a.split("").sort().join("");
+//   var test = b.split("").sort().join("");
+//   console.log(base);
+//   console.log(test);
+//   var answer;
+
+//   if (base === test) {
+//     answer = true;
+//   } else {
+//     answer = false;
+//   }
+
+//   console.log(answer);
+//   return answer;
+// };
+
+// anagramer(one, two);
+
+
+// Excel Spreadsheet Column Number
+var excel = function(a) {
+  var str = "abcdefghijklmnopqrstuvwxyz";
+  var array = str.split("");
   var answer;
 
-  if (base === test) {
-    answer = true;
+  if (a <= 26) {
+    answer = array[a - 1];    
   } else {
-    answer = false;
+    var divider = Math.floor(a / 26);
+    var modulo = a % 26;
+    console.log("modulo", modulo);
+    answer = array[divider - 1] + array[modulo - 1];
   }
-
   console.log(answer);
-  return answer;
+  return;
 };
 
-anagramer(one, two);
-
-
-
+excel(27);
 
 
 
