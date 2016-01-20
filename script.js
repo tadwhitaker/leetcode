@@ -311,26 +311,57 @@
 
 
 // Excel Spreadsheet Column Number
-var excel = function(a) {
-  var str = "abcdefghijklmnopqrstuvwxyz";
-  var array = str.split("");
-  var answer;
+// var excel = function(a) {
+//   var str = "abcdefghijklmnopqrstuvwxyz";
+//   var array = str.split("");
+//   var answer;
 
-  if (a <= 26) {
-    answer = array[a - 1];    
-  } else {
-    var divider = Math.floor(a / 26);
-    var modulo = a % 26;
-    console.log("modulo", modulo);
-    answer = array[divider - 1] + array[modulo - 1];
+//   if (a <= 26) {
+//     answer = array[a - 1];    
+//   } else {
+//     var divider = Math.floor(a / 26);
+//     var modulo = a % 26;
+//     console.log("modulo", modulo);
+//     answer = array[divider - 1] + array[modulo - 1];
+//   }
+//   console.log(answer);
+//   return;
+// };
+
+// excel(27);
+
+
+// Find if an array of integers contains any duplicates.
+
+var yes = [0, 1, 2, 3, 3];
+var no = [0, 1, 2, 3, 4, 5];
+
+var duplicateFinder = function(a) {
+  var answer;
+  var storage = {};
+  for (var i = 0; i < a.length; i++) {
+    var item = a[i];
+    if (storage[item]) {
+      incriment = storage[item] + 1;
+      storage[item] = incriment;
+    } else {
+      storage[item] = 1;
+    }
   }
+
+  for (var key in storage) {
+    if (storage[key] > 1) {
+      answer = true;
+    } else {
+      answer = false;
+    }
+  }
+  console.log(storage);
   console.log(answer);
-  return;
+  return answer;
 };
 
-excel(27);
-
-
+duplicateFinder(no);
 
 
 
