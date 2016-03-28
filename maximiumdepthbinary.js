@@ -46,17 +46,62 @@
 //   right: null
 // };
 
-// var maxDepth = 0;
+function Node(val){
+  this.value = val;
+  this.left = null;
+  this.right = null;
+}
 
-// var maximumDepth = function(n) {
+function BinarySearchTree(){
+  this.root = null;
+}
 
-//   for (var key in n) {
-//     if (key.left) {
+BinarySearchTree.prototype.push = function(val){
+   var root = this.root;
 
-//     }
-//   }
+   if(!root){
+      this.root = new Node(val);
+      return;
+   }
 
-// return maxDepth;
-// };
+   var currentNode = root;
+   var newNode = new Node(val); 
 
-// maximumDepth(sample);
+   while(currentNode){
+      if(val < currentNode.value){
+          if(!currentNode.left){
+             currentNode.left = newNode;
+             break;
+          }
+          else{
+             currentNode = currentNode.left;
+        }
+     }
+     else{
+         if(!currentNode.right){
+            currentNode.right = newNode;
+            break;
+         }
+         else{
+            currentNode = currentNode.right;
+         }
+     }
+  }
+};
+
+var bst = new BinarySearchTree();
+bst.push(3);
+bst.push(2);
+bst.push(4);
+bst.push(1);
+bst.push(5);
+
+// Depth First Search
+function dfs(node){
+  if(node){
+    console.log(node.value);
+    dfs(node.left);
+    dfs(node.right);
+  }
+}
+
