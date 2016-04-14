@@ -1,33 +1,24 @@
-// Node class
-var Node = function(name) {
-  var edges = [];
-  this.name = name;
+var Node = function(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
 };
 
-// Graph class
-var Graph = function() {
-  this.node_list = [];
+var contains = function(value) {
+
 };
 
-// Contains
-Graph.prototype.contains = function(item) {
-  for (var i = 0; i < this.node_list.length; i++) {
-    if (this.node_list[i].name === item) {
-      return true;
+var binaryTree = function(value) {
+  this.value = new Node(value);
+};
+
+binaryTree.prototype.add = function(value) {
+    if (this.left === undefined) {
+      this.left = new Node(value);
+      console.log("The left fired");
+    } else if (this.right === undefined) {
+      this.right = new Node(value);
     }
-  }
-  return false;
-}
-
-// Add Edge
-Graph.prototype.add = function(item) {
-  this.node_list.push(item);
 };
 
-//
 
-var chronicle = new Node("chronicle");
-
-var Google = new Graph();
-
-Google.add(chronicle);
