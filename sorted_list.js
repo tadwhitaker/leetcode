@@ -103,12 +103,16 @@ LinkedList.prototype.remove = function(data) {
 }
 
 LinkedList.prototype.sorted = function() {
-  var current = this.head.data;
-  var next = this.head.next.data;
-  if (current === next) {
-
-  }
-
+  var sortedList = {};
+  var current = this.head;
+  var inner = function(current) {
+    var currentValue = current.data;
+    var nextValue = current.next.head.data;
+    if (currentValue === nextValue) {
+      current = current.next.head.next;
+    }
+  };
+  inner(current);
 };
 
 
