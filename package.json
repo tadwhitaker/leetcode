@@ -1,0 +1,23 @@
+{
+  "name": "tadwhitaker",
+  "version": "1.0.0",
+  "description": "Toy Probems",
+  "main": "adddigits.js",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadwhitaker/leetcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tadwhitaker/leetcode/issues"
+  },
+  "homepage": "https://github.com/tadwhitaker/leetcode#readme"
+}
