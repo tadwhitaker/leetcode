@@ -1,14 +1,21 @@
 {
   "name": "tadwhitaker",
   "version": "1.0.0",
-  "description": "Toy Probems",
+  "description": "Toy Problems",
   "main": "adddigits.js",
   "dependencies": {
     "underscore": "^1.8.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "latest",
+    "watchify": "latest",
+    "grunt": "~0.4.0",
+    "grunt-browserify": "latest",
+    "grunt-contrib-watch": "latest"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-js": "browserify js/index.js > js/build.js",
+    "watch-js": "watchify js/index.js -o js/build.js -v"
   },
   "repository": {
     "type": "git",
