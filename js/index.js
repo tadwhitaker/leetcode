@@ -1,11 +1,18 @@
 var _ = require('underscore');
+// var x = require('./x.json');
+// var shadesOfWhat = require('./shadesOfWhat.js');
+// var bikeArr = ["Haro", "Trek", "Specialized"];
+//
+// var bikeObj = {kid: "Haro", teen: "Specialized", adult: "Trek"};
+//
+// var numArr = [7, 1, 2, 3, 4, 5];
+//
+// var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White"]
 
-// Return the indices of the two numbers that add up to a specific target.
-var sample = [2, 7, 11, 15], target = 9;
-//answer is [0, 1].
+// var number = Object.keys(x).length;
+// console.log(number)
 
-var artists = ['Pharrel Williams', 'Led Zeppelin', 'Rolling Stones'];
-
-_.each(artists, function(artist, index, artists) {
-  console.log('artist: ' + artist);
-});
+var _ = require('underscore');
+// var shadesOfWhat = require('./shadesOfWhat.js');
+// console.log(shadesOfWhat);
+// var parentColors = require('./x.js');
