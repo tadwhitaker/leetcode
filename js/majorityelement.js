@@ -27,3 +27,40 @@ var majority = function(arg) {
 };
 
 majority(arr);
+
+
+
+
+// ************** Answer 2.0 ********************
+
+
+var example = [0, 1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2];
+
+var here = {0: 2, 1: 4, 2: 9}
+
+function major(arr) {
+  var storage = {};
+  var answer;
+  for (var i = 0; i < arr.length; i++) {
+    var digit = arr[i];
+    if (!storage[digit]) {
+      storage[digit] = 1;
+    } else {
+      storage[digit] = storage[digit] + 1;
+    }
+  }
+
+  for (var key in storage) {
+    if (answer === undefined) {
+      answer = key;
+    }
+
+    if (storage[key] > storage[answer]) {
+      answer = key;
+    }
+  }
+  console.log("answer is ", answer);
+  return answer;
+}
+
+major(example);

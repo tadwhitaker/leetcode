@@ -1,18 +1,23 @@
-var _ = require('underscore');
-// var x = require('./x.json');
-// var shadesOfWhat = require('./shadesOfWhat.js');
-// var bikeArr = ["Haro", "Trek", "Specialized"];
-//
-// var bikeObj = {kid: "Haro", teen: "Specialized", adult: "Trek"};
-//
-// var numArr = [7, 1, 2, 3, 4, 5];
-//
-// var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White"]
+// // var _ = require('underscore');
+// What would be the output of the below code.
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
 
-// var number = Object.keys(x).length;
-// console.log(number)
+        (function() {
+          console.log(this);
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
 
-var _ = require('underscore');
-// var shadesOfWhat = require('./shadesOfWhat.js');
-// console.log(shadesOfWhat);
-// var parentColors = require('./x.js');
+    }
+};
+myObject.func();
+
+//outer func:  this.foo = bar
+//outer func:  self.foo = bar
+//inner func:  this.foo = undefined
+//inner func:  self.foo = bar
